@@ -34,17 +34,22 @@ WELCOME_MESSAGE_TEMPLATE = (
 
 
 SUMMARY_REQUEST_PROMPT = (
-    "Write the final bill split for this conversation as an email body. "
-    "Include these in order: the list of items with prices; the subtotal, "
-    "discount, taxes, tip and total (only those that apply); how many people "
-    "and which split method we agreed on (even or by item); then one line "
-    "per person showing exactly what they owe. End with one line confirming "
-    "that the per-person amounts add up to the total. "
-    "If no receipt or split has been discussed yet, reply only with: "
-    "No split to send yet. "
-    "Plain text only, no markdown, no greeting and no sign-off. "
-    "Write only the body, ready to send exactly as you write it."
-)
+       "Write the final bill split for this conversation as an email body. "
+       "Use exactly these section headings, each followed by a colon: Items, "
+       "Totals, Split method, Each person pays. "
+       "Under Items, list each item with its price. "
+       "Under Totals, show only the subtotal, discount, taxes, tip and total "
+       "that actually apply, each on its own line. "
+       "Under Split method, say in one short sentence how many people and how "
+       "the cost was divided. "
+       "Under Each person pays, put one line per person with their amount. "
+       "End with one line confirming that the amounts add up to the total. "
+       "Start directly with the heading Items: no introduction, no greeting "
+       "and no sign-off. "
+       "If no receipt or split has been discussed yet, reply only with: "
+       "No split to send yet. "
+       "Plain text only, no markdown."
+   )
 
 
 EMAIL_SUBJECT = "Your BillSplit summary"
